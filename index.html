@@ -5,12 +5,24 @@
 </head>
 <body>
 
-<div id="main-chat-app">
-    <div id="chat-app"></div>
-</div>
-<!--<div id="rating"></div>-->
+<script src="loader.js"></script>
 
-<script src="./dist/main.js"></script>
+<script>
+
+    var data = {
+        user_id: 888888,
+        widget_id: 2,
+        signature: 'c724743877e17823ac44efe9b0254668a828f106',
+    };
+
+    var loader = setInterval(function(){
+        if (typeof YHelperChatVue !== 'undefined') {
+            clearInterval(loader);
+            new YHelperChatVue(data);
+        }
+    }, 100);
+
+</script>
 
 </body>
 </html>

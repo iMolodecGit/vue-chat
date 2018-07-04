@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-import DragNDrop from './helpers/DragNDrop';
 
 // import Rating from './components/Rating.vue'
 //
@@ -14,10 +13,20 @@ import DragNDrop from './helpers/DragNDrop';
 
 let app = {
      el: '#chat-app',
-     render: h => h(App)
+     render(h) {
+         return h(App, {
+             props: {
+                 userId: this.$el.attributes['user_id'].value,
+                 widgetId: +this.$el.attributes['widget_id'].value,
+                 signature: this.$el.attributes['signature'].value
+             }
+         })
+     },
+     mounted() {
+
+     }
  };
 
 new Vue(app);
 
 
-new DragNDrop('main-chat-app');

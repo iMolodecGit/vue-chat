@@ -15,8 +15,6 @@
 
     import Icon from 'vue-awesome/components/Icon'
 
-    import Chat from './../service/chat'
-
     export default {
         props: {
             grade: {
@@ -46,8 +44,6 @@
             rate(star) {
                 this.stars = this.stars === star ? star - 1 : star;
                 this.scale = this.stars;
-                Chat.send();
-
             }
         },
         data() {

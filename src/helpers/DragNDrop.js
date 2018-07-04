@@ -2,7 +2,7 @@ class DragNDrop {
 
     constructor(elementId)
     {
-        this.el = document.getElementById(elementId).firstElementChild;
+        this.el = document.getElementById(elementId);
 
         if (!this.el) {
             return;
